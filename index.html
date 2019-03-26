@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  -->
+    <h1>Weather Forcast</h1>
+    <div id="app" class="weather_box">
+      <div class="weather_info">
+        <p class="weather_city">{{ city }}</p>
+        <p class="weather_condition">{{ condition.main }}</p>
+        <p class="weather_temp">{{ temp | roundUp }}&deg;C</p>
+      </div>
+    </div>
+    <p v-if="condition.main == 'Rain'">
+      <img src="img/Rain.png" alt="Rainy" />
+    </p>
+    <p v-else-if="condition.main == 'Clouds'">
+      <img src="img/cloudy.png" alt="Cloudy" />
+    </p>
+    <p v-else-if="condition.main == 'Clear'">
+      <img src="img/sunny.png" alt="Sunny" />
+    </p>
+    <p v-else>
+      <img src="img/sunset.png" alt="Sunset" />
+    </p>
+
+    <!--  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
