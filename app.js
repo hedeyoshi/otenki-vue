@@ -1,3 +1,9 @@
+//import { key } from './key.js';
+
+
+
+
+
 var app = new Vue({
   el: '#app',
   data: {
@@ -8,7 +14,7 @@ var app = new Vue({
     }
   },
   mounted: function () {
-    axios.get('https://api.openweathermap.org/data/2.5/weather?q=Osaka,jp&units=metric&appid=23c5630c59265bbe71d891f728102de0')
+    axios.get('https://api.openweathermap.org/data/2.5/weather?q=Osaka,jp&units=metric&appid=' + key)
       .then(function (response) {
         this.city = response.data.name
         this.temp = response.data.main.temp
@@ -24,3 +30,10 @@ var app = new Vue({
     }
   }
 })
+
+
+
+
+
+
+
