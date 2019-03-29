@@ -1,8 +1,7 @@
-//import { key } from './key.js';
+'use strict';
 
-
-
-
+import key from './key.js';
+console.log(key);
 
 var app = new Vue({
   el: '#app',
